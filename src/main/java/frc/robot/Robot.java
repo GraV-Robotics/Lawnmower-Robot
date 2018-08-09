@@ -17,6 +17,8 @@ public class Robot extends TimedRobot {
   public static LEDOutputSubsystem ledOutputSubsystem;
   public static DriveTrainSubsystem driveTrainSubsystem;
   public static DataLogger dataLogger;
+  public static LawnmowerBladeSubsystem lawnmowerBladeSubsystem;
+  public static LightRelaySubsystem lightRelaySubsystem;
   PowerDistributionPanel pdp = new PowerDistributionPanel();
 
   @Override
@@ -24,6 +26,8 @@ public class Robot extends TimedRobot {
     m_oi = new OI();
     ledOutputSubsystem = new LEDOutputSubsystem();
     driveTrainSubsystem = new DriveTrainSubsystem();
+    lawnmowerBladeSubsystem = new LawnmowerBladeSubsystem();
+    lightRelaySubsystem = new LightRelaySubsystem();
     CameraServer.getInstance().startAutomaticCapture();
     
   }

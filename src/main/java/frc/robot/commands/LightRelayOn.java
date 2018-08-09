@@ -5,12 +5,12 @@ import frc.robot.subsystems.LightRelaySubsystem;
 
 public class LightRelayOn extends Command {
   public LightRelayOn() {
-    requires(new LightRelaySubsystem());
-    setTimeout(60);
+    
   }
 
   @Override
   protected void initialize() {
+    setTimeout(60);
   }
 
   @Override

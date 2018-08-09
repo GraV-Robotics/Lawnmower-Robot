@@ -5,8 +5,9 @@ import frc.robot.OI;
 import frc.robot.subsystems.DriveTrainSubsystem;
 
 public class DriveWithJoysticks extends Command {
+
   public DriveWithJoysticks() {
-    requires(new DriveTrainSubsystem());
+    
   }
 
   @Override

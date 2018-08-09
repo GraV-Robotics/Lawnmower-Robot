@@ -6,13 +6,12 @@ import frc.robot.subsystems.LawnmowerBladeSubsystem;
 
 public class LawnmowerBladeOn extends InstantCommand {
   public LawnmowerBladeOn() {
-    requires(new LawnmowerBladeSubsystem());
-    requires(new LEDOutputSubsystem());
-    setTimeout(30);
+    
   }
 
   @Override
   protected void initialize() {
+    setTimeout(30);
   }
 
   @Override
