@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.DataLogger;
+import frc.robot.commands.DriveWithJoysticks;
 import frc.robot.commands.LawnmowerBladeOn;
 import frc.robot.commands.LightRelayOn;
 import frc.robot.subsystems.DriveTrainSubsystem;
@@ -21,6 +22,7 @@ public class Robot extends TimedRobot {
   DataLogger dataLogger;
   LawnmowerBladeSubsystem lawnmowerBladeSubsystem;
   LightRelaySubsystem lightRelaySubsystem;
+  DriveWithJoysticks driveWithJoysticks;
   PowerDistributionPanel pdp = new PowerDistributionPanel();
 
   @Override
@@ -67,6 +69,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit() {
+    driveWithJoysticks = new DriveWithJoysticks(driveTrainSubsystem, oi);
     OI.lawnmowerButton.whenPressed(new LawnmowerBladeOn(lawnmowerBladeSubsystem, ledOutputSubsystem));
     OI.lightRelayButton.whenPressed(new LightRelayOn(lightRelaySubsystem));
   }
