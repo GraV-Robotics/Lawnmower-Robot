@@ -28,7 +28,6 @@ public class DataLogger extends Command {
 
   @Override
   protected void execute() {
-    
     try {
       writer = new PrintWriter(file);
       currentTime = System.currentTimeMillis();

@@ -7,6 +7,8 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.DataLogger;
+import frc.robot.commands.LawnmowerBladeOn;
+import frc.robot.commands.LightRelayOn;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.subsystems.LEDOutputSubsystem;
 import frc.robot.subsystems.LawnmowerBladeSubsystem;
@@ -65,7 +67,8 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit() {
-
+    OI.lawnmowerButton.whenPressed(new LawnmowerBladeOn(lawnmowerBladeSubsystem, ledOutputSubsystem));
+    OI.lightRelayButton.whenPressed(new LightRelayOn(lightRelaySubsystem));
   }
 
   @Override

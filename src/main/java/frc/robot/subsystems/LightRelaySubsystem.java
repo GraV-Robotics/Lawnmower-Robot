@@ -15,7 +15,7 @@ public class LightRelaySubsystem extends Subsystem {
 
   @Override
   public void initDefaultCommand() {
-    setDefaultCommand(new LightRelayOn());
+    
   }
 
   public void on() {

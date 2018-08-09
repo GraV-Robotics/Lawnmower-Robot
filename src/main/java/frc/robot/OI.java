@@ -8,13 +8,12 @@ import frc.robot.commands.LightRelayOn;
 
 public class OI {
 
-  public Joystick joystick1 = new Joystick(RobotMap.joystick1);
-  public Joystick joystick2 = new Joystick(RobotMap.joystick2);
-  public Button lightRelayButton =  new JoystickButton(joystick1, RobotMap.lightRelayButton);
-  public Button lawnmowerButton = new JoystickButton(joystick2, RobotMap.lawnmowerBladeButton);
+  public static Joystick joystick1 = new Joystick(RobotMap.joystick1);
+  public static Joystick joystick2 = new Joystick(RobotMap.joystick2);
+  public static Button lightRelayButton =  new JoystickButton(joystick1, RobotMap.lightRelayButton);
+  public static Button lawnmowerButton = new JoystickButton(joystick2, RobotMap.lawnmowerBladeButton);
 
   public OI() {
-    lawnmowerButton.whenPressed(new LawnmowerBladeOn());
-    lightRelayButton.whenPressed(new LightRelayOn());
+    
   }
 }

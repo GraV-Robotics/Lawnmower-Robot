@@ -7,8 +7,8 @@ public class LightRelayOn extends Command {
 
 LightRelaySubsystem lightRelaySubsystem;
 
-  public LightRelayOn() {
-    
+  public LightRelayOn(LightRelaySubsystem lightRelay) {
+    lightRelaySubsystem = lightRelay;
   }
 
   @Override

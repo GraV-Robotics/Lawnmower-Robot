@@ -9,8 +9,9 @@ public class LawnmowerBladeOn extends InstantCommand {
   LawnmowerBladeSubsystem lawnmowerBladeSubsystem;
   LEDOutputSubsystem ledOutputSubsystem;
 
-  public LawnmowerBladeOn() {
-    
+  public LawnmowerBladeOn(LawnmowerBladeSubsystem lawnmowerBlade, LEDOutputSubsystem ledOutput) {
+    lawnmowerBladeSubsystem = lawnmowerBlade;
+    ledOutputSubsystem = ledOutput;
   }
 
   @Override

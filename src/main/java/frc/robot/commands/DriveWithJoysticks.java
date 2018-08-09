@@ -9,8 +9,9 @@ public class DriveWithJoysticks extends Command {
   DriveTrainSubsystem driveTrainSubsystem;
   OI oi;
 
-  public DriveWithJoysticks() {
-    
+  public DriveWithJoysticks(DriveTrainSubsystem driveTrain, OI oi_) {
+    driveTrainSubsystem = driveTrain;
+    oi = oi_;
   }
 
   @Override
