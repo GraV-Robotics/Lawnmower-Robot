@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.commands.DataLogger;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.subsystems.LEDOutputSubsystem;
 import frc.robot.subsystems.LawnmowerBladeSubsystem;
@@ -15,6 +16,7 @@ public class Robot extends TimedRobot {
   public static OI m_oi;
   public static LEDOutputSubsystem ledOutputSubsystem;
   public static DriveTrainSubsystem driveTrainSubsystem;
+  public static DataLogger dataLogger;
   PowerDistributionPanel pdp = new PowerDistributionPanel();
 
   @Override
@@ -32,9 +34,10 @@ public class Robot extends TimedRobot {
     SmartDashboard.putNumber("LED Current Draw: ", pdp.getCurrent(RobotMap.LEDPDPChannel));
     SmartDashboard.putBoolean("Blade Active: ", LawnmowerBladeSubsystem.motor5.isAlive());
     SmartDashboard.putNumber("Blade Speed in MPH: ", convertToMPH(LawnmowerBladeSubsystem.motor5.getSpeed()));
-    SmartDashboard.putNumber("Blade Current Draw: ", pdp.getCurrent(RobotMap.LawnmowerPDPChannel));
+    SmartDashboard.putNumber("Blade Current Draw: ", pdp.getCurrent(RobotMap.motor5PDPChannel));
     SmartDashboard.putBoolean("Relay On: ", getRelayState());
-    SmartDashboard.putNumber("Light Current Draw: ", pdp.getCurrent(RobotMap.LightPDPChannel));
+    SmartDashboard.putNumber("Light Current Draw: ", pdp.getCurrent(RobotMap.relay1PDPChannel));
+    dataLogger = new DataLogger();
   }
 
   @Override
