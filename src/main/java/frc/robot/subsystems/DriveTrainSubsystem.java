@@ -7,7 +7,7 @@ import frc.robot.commands.DriveWithJoysticks;
 
 public class DriveTrainSubsystem extends Subsystem {
 
-  static Spark motor1, motor2, motor3, motor4;
+  public static Spark motor1, motor2, motor3, motor4;
 
   @Override
   public void initDefaultCommand() {

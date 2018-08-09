@@ -13,5 +13,8 @@ public class RobotMap {
   public static int motor4 = 3;
   public static int motor5 = 4;
   public static int relay1 = 0;
+  public static int LawnmowerPDPChannel = 4;
+  public static int LightPDPChannel = 2;
+  public static int LEDPDPChannel = 6;
 
 }

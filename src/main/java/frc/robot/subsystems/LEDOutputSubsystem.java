@@ -6,7 +6,7 @@ import frc.robot.RobotMap;
 
 public class LEDOutputSubsystem extends Subsystem {
 
-  static DigitalOutput ledTogglePin;
+  public static DigitalOutput ledTogglePin;
 
   public LEDOutputSubsystem() {
     ledTogglePin = new DigitalOutput(RobotMap.ledSwitch);

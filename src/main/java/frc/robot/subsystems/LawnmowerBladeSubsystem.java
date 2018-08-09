@@ -6,7 +6,7 @@ import frc.robot.RobotMap;
 
 public class LawnmowerBladeSubsystem extends Subsystem {
 
-  static VictorSP motor5;
+  public static VictorSP motor5;
 
   public LawnmowerBladeSubsystem() {
     motor5 = new VictorSP(RobotMap.motor5);
