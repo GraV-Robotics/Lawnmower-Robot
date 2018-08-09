@@ -7,11 +7,9 @@ import frc.robot.subsystems.DriveTrainSubsystem;
 public class DriveWithJoysticks extends Command {
 
   DriveTrainSubsystem driveTrainSubsystem;
-  OI oi;
 
-  public DriveWithJoysticks(DriveTrainSubsystem driveTrain, OI oi_) {
+  public DriveWithJoysticks(DriveTrainSubsystem driveTrain) {
     driveTrainSubsystem = driveTrain;
-    oi = oi_;
   }
 
   @Override
@@ -20,7 +18,7 @@ public class DriveWithJoysticks extends Command {
 
   @Override
   protected void execute() {
-    driveTrainSubsystem.drive(oi.joystick1.getY(), oi.joystick2.getY());
+    driveTrainSubsystem.drive(OI.joystick1.getY(), OI.joystick2.getY());
   }
 
   @Override

@@ -69,7 +69,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit() {
-    driveWithJoysticks = new DriveWithJoysticks(driveTrainSubsystem, oi);
+    driveWithJoysticks = new DriveWithJoysticks(driveTrainSubsystem);
     OI.lawnmowerButton.whenPressed(new LawnmowerBladeOn(lawnmowerBladeSubsystem, ledOutputSubsystem));
     OI.lightRelayButton.whenPressed(new LightRelayOn(lightRelaySubsystem));
   }
