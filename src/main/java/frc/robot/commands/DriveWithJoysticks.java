@@ -1,12 +1,15 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.OI;
+import frc.robot.Robot;
 import frc.robot.subsystems.DriveTrainSubsystem;
 
 public class DriveWithJoysticks extends Command {
+
   public DriveWithJoysticks() {
-    requires(new DriveTrainSubsystem());
+    
   }
 
   @Override
@@ -15,7 +18,7 @@ public class DriveWithJoysticks extends Command {
 
   @Override
   protected void execute() {
-    DriveTrainSubsystem.drive(OI.joystick1.getY(), OI.joystick2.getY());
+    Robot.driveTrainSubsystem.drive(OI.joystick1.getY(), OI.joystick2.getY());
   }
 
   @Override

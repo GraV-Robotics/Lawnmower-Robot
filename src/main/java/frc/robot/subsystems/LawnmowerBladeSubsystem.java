@@ -6,7 +6,7 @@ import frc.robot.RobotMap;
 
 public class LawnmowerBladeSubsystem extends Subsystem {
 
-  static VictorSP motor5;
+  public VictorSP motor5;
 
   public LawnmowerBladeSubsystem() {
     motor5 = new VictorSP(RobotMap.motor5);
@@ -17,11 +17,11 @@ public class LawnmowerBladeSubsystem extends Subsystem {
 
   }
 
-  public static void on() {
+  public void on() {
     motor5.set(1.0);
   }
 
-  public static void off() {
+  public void off() {
     motor5.set(0.0);
   }
 }

@@ -7,11 +7,11 @@ import frc.robot.commands.DriveWithJoysticks;
 
 public class DriveTrainSubsystem extends Subsystem {
 
-  static Spark motor1, motor2, motor3, motor4;
+  public Spark motor1, motor2, motor3, motor4;
 
   @Override
   public void initDefaultCommand() {
-    setDefaultCommand(new DriveWithJoysticks());
+    
   }
 
   public DriveTrainSubsystem() {
@@ -21,10 +21,10 @@ public class DriveTrainSubsystem extends Subsystem {
     motor4 = new Spark(RobotMap.motor4);
   }
 
-  public static void drive(double leftVal, double rightVal) {
-    motor1.set(leftVal);
-    motor2.set(leftVal);
-    motor3.set(rightVal);
+  public void drive(double leftVal, double rightVal) {
+    motor1.set(-leftVal);
+    motor2.set(-leftVal);
+    motor3.set(-rightVal);
     motor4.set(rightVal);
   }
 }

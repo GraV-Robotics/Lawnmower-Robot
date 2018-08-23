@@ -4,18 +4,21 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.LightRelaySubsystem;
 
 public class LightRelayOn extends Command {
-  public LightRelayOn() {
-    requires(new LightRelaySubsystem());
-    setTimeout(60);
+
+LightRelaySubsystem lightRelaySubsystem;
+
+  public LightRelayOn(LightRelaySubsystem lightRelay) {
+    lightRelaySubsystem = lightRelay;
   }
 
   @Override
   protected void initialize() {
+    setTimeout(60);
   }
 
   @Override
   protected void execute() {
-    LightRelaySubsystem.on();
+    lightRelaySubsystem.on();
   }
 
   @Override
@@ -25,11 +28,11 @@ public class LightRelayOn extends Command {
 
   @Override
   protected void end() {
-    LightRelaySubsystem.off();
+    lightRelaySubsystem.off();
   }
 
   @Override
   protected void interrupted() {
-    LightRelaySubsystem.off();
+    lightRelaySubsystem.off();
   }
 }

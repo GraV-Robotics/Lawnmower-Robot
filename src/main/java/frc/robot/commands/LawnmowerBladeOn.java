@@ -5,20 +5,24 @@ import frc.robot.subsystems.LEDOutputSubsystem;
 import frc.robot.subsystems.LawnmowerBladeSubsystem;
 
 public class LawnmowerBladeOn extends InstantCommand {
-  public LawnmowerBladeOn() {
-    requires(new LawnmowerBladeSubsystem());
-    requires(new LEDOutputSubsystem());
-    setTimeout(30);
+
+  LawnmowerBladeSubsystem lawnmowerBladeSubsystem;
+  LEDOutputSubsystem ledOutputSubsystem;
+
+  public LawnmowerBladeOn(LawnmowerBladeSubsystem lawnmowerBlade, LEDOutputSubsystem ledOutput) {
+    lawnmowerBladeSubsystem = lawnmowerBlade;
+    ledOutputSubsystem = ledOutput;
   }
 
   @Override
   protected void initialize() {
+    setTimeout(30);
   }
 
   @Override
   protected void execute() {
-    LawnmowerBladeSubsystem.on();
-    LEDOutputSubsystem.on();
+    lawnmowerBladeSubsystem.on();
+    ledOutputSubsystem.on();
   }
 
   @Override
@@ -28,13 +32,13 @@ public class LawnmowerBladeOn extends InstantCommand {
 
   @Override
   protected void end() {
-    LawnmowerBladeSubsystem.off();
-    LEDOutputSubsystem.off();
+    lawnmowerBladeSubsystem.off();
+    ledOutputSubsystem.off();
   }
 
   @Override
   protected void interrupted() {
-    LawnmowerBladeSubsystem.off();
-    LEDOutputSubsystem.off();
+    lawnmowerBladeSubsystem.off();
+    ledOutputSubsystem.off();
   }
 }
