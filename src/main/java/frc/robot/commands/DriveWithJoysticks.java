@@ -1,10 +1,8 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.OI;
 import frc.robot.Robot;
-import frc.robot.subsystems.DriveTrainSubsystem;
 
 public class DriveWithJoysticks extends Command {
 

@@ -38,14 +38,14 @@ public class Robot extends TimedRobot {
 
   @Override
   public void robotPeriodic() {
-    // SmartDashboard.putBoolean("DIO STATE: ", ledOutputSubsystem.ledTogglePin.get());
-    // SmartDashboard.putNumber("LED Current Draw: ", pdp.getCurrent(RobotMap.LEDPDPChannel));
-    // SmartDashboard.putBoolean("Blade Active: ", lawnmowerBladeSubsystem.motor5.isAlive());
-    // SmartDashboard.putNumber("Blade Speed in MPH: ", convertToMPH(lawnmowerBladeSubsystem.motor5.getSpeed()));
-    // SmartDashboard.putNumber("Blade Current Draw: ", pdp.getCurrent(RobotMap.motor5PDPChannel));
-    // SmartDashboard.putBoolean("Relay On: ", getRelayState());
-    // SmartDashboard.putNumber("Light Current Draw: ", pdp.getCurrent(RobotMap.relay1PDPChannel));
-    // dataLogger = new DataLogger();
+    SmartDashboard.putBoolean("DIO STATE: ", ledOutputSubsystem.ledTogglePin.get());
+    SmartDashboard.putNumber("LED Current Draw: ", pdp.getCurrent(RobotMap.LEDPDPChannel));
+    SmartDashboard.putBoolean("Blade Active: ", lawnmowerBladeSubsystem.motor5.isAlive());
+    SmartDashboard.putNumber("Blade Speed in MPH: ", convertToMPH(lawnmowerBladeSubsystem.motor5.getSpeed()));
+    SmartDashboard.putNumber("Blade Current Draw: ", pdp.getCurrent(RobotMap.motor5PDPChannel));
+    SmartDashboard.putBoolean("Relay On: ", getRelayState());
+    SmartDashboard.putNumber("Light Current Draw: ", pdp.getCurrent(RobotMap.relay1PDPChannel));
+    dataLogger = new DataLogger();
   }
 
   @Override
