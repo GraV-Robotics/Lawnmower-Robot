@@ -21,9 +21,15 @@ public class DriveTrainSubsystem extends Subsystem {
   }
 
   public void drive(double leftVal, double rightVal) {
+<<<<<<< HEAD
     motor1.set(leftVal);
     motor2.set(leftVal);
     motor3.set(rightVal);
+=======
+    motor1.set(-leftVal);
+    motor2.set(-leftVal);
+    motor3.set(-rightVal);
+>>>>>>> master
     motor4.set(rightVal);
   }
 }

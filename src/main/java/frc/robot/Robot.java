@@ -16,6 +16,7 @@ import frc.robot.subsystems.LawnmowerBladeSubsystem;
 import frc.robot.subsystems.LightRelaySubsystem;
 
 public class Robot extends TimedRobot {
+<<<<<<< HEAD
   OI oi;
   LEDOutputSubsystem ledOutputSubsystem;
   DriveTrainSubsystem driveTrainSubsystem;
@@ -24,6 +25,16 @@ public class Robot extends TimedRobot {
   LightRelaySubsystem lightRelaySubsystem;
   DriveWithJoysticks driveWithJoysticks;
   PowerDistributionPanel pdp = new PowerDistributionPanel();
+=======
+  public static OI oi;
+  public static LEDOutputSubsystem ledOutputSubsystem;
+  public static DriveTrainSubsystem driveTrainSubsystem;
+  public static DataLogger dataLogger;
+  public static LawnmowerBladeSubsystem lawnmowerBladeSubsystem;
+  public static LightRelaySubsystem lightRelaySubsystem;
+  public static DriveWithJoysticks driveWithJoysticks;
+  public static PowerDistributionPanel pdp = new PowerDistributionPanel();
+>>>>>>> master
 
   @Override
   public void robotInit() {
@@ -32,7 +43,11 @@ public class Robot extends TimedRobot {
     driveTrainSubsystem = new DriveTrainSubsystem();
     lawnmowerBladeSubsystem = new LawnmowerBladeSubsystem();
     lightRelaySubsystem = new LightRelaySubsystem();
+<<<<<<< HEAD
     CameraServer.getInstance().startAutomaticCapture();
+=======
+    // CameraServer.getInstance().startAutomaticCapture();
+>>>>>>> master
     
   }
 
@@ -69,13 +84,20 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit() {
+<<<<<<< HEAD
     driveWithJoysticks = new DriveWithJoysticks(driveTrainSubsystem);
     OI.lawnmowerButton.whenPressed(new LawnmowerBladeOn(lawnmowerBladeSubsystem, ledOutputSubsystem));
     OI.lightRelayButton.whenPressed(new LightRelayOn(lightRelaySubsystem));
+=======
+    driveWithJoysticks = new DriveWithJoysticks();
+    OI.lawnmowerButton.toggleWhenPressed(new LawnmowerBladeOn(lawnmowerBladeSubsystem, ledOutputSubsystem));
+    OI.lightRelayButton.toggleWhenPressed(new LightRelayOn(lightRelaySubsystem));
+>>>>>>> master
   }
 
   @Override
   public void teleopPeriodic() {
+    driveWithJoysticks.start();
     Scheduler.getInstance().run();
   }
 
