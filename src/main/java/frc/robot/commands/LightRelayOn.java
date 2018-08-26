@@ -18,11 +18,7 @@ LightRelaySubsystem lightRelaySubsystem;
 
   @Override
   protected void execute() {
-<<<<<<< HEAD
-    ;
-=======
     lightRelaySubsystem.on();
->>>>>>> master
   }
 
   @Override
@@ -32,19 +28,11 @@ LightRelaySubsystem lightRelaySubsystem;
 
   @Override
   protected void end() {
-<<<<<<< HEAD
-    lightRelaySubsystem.on();
-=======
     lightRelaySubsystem.off();
->>>>>>> master
   }
 
   @Override
   protected void interrupted() {
-<<<<<<< HEAD
-    
-=======
     lightRelaySubsystem.off();
->>>>>>> master
   }
 }
