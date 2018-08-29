@@ -22,7 +22,7 @@ public class DataLogger extends Command {
 
   @Override
   protected void initialize() {
-    file = "C:\\Program Files\\LogFile";
+    file = "logFile.txt";
     pastTime = System.currentTimeMillis();
   }
 
