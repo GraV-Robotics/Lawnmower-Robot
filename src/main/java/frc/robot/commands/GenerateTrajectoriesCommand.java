@@ -23,7 +23,7 @@ public class GenerateTrajectoriesCommand extends Command {
     config = new Trajectory.Config(Trajectory.FitMethod.HERMITE_CUBIC, Trajectory.Config.SAMPLES_HIGH, 0.05, RobotMap.maxVelocityMetersPerSecond, RobotMap.maxVelocityMetersPerSecond, 60.0);
     points = new Waypoint[] {
       new Waypoint(convertInchesToMeters(12), convertInchesToMeters(12), Pathfinder.d2r(45)),
-      new Waypoint(convertInchesToMeters(24), convertInchesToMeters(24), 0),
+      new Waypoint(convertInchesToMeters(8), convertInchesToMeters(4), 0),
       new Waypoint(0, 0, 0)
     };
 
