@@ -11,18 +11,18 @@ public class DataLogger extends Command {
 
   PrintWriter writer;
   String file;
-  PowerDistributionPanel pdp = new PowerDistributionPanel();
+  PowerDistributionPanel pdp;
   Long pastTime;
   Long currentTime;
   double finalTime;
 
-  public DataLogger() {
-
+  public DataLogger(PowerDistributionPanel powerDistributionPanel) {
+    pdp = powerDistributionPanel;
   }
 
   @Override
   protected void initialize() {
-    file = "logFile.txt";
+    file = "logfile.txt";
     pastTime = System.currentTimeMillis();
   }
 

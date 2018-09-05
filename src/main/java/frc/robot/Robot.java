@@ -8,10 +8,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.DataLogger;
 import frc.robot.commands.DriveWithJoysticks;
-import frc.robot.commands.GenerateTrajectoriesCommand;
 import frc.robot.commands.LawnmowerBladeOn;
 import frc.robot.commands.LightRelayOn;
-import frc.robot.commands.TrajectoryFollowerCommand;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.subsystems.LEDOutputSubsystem;
 import frc.robot.subsystems.LawnmowerBladeSubsystem;
@@ -26,8 +24,7 @@ public class Robot extends TimedRobot {
   public static LightRelaySubsystem lightRelaySubsystem;
   public static DriveWithJoysticks driveWithJoysticks;
   public static PowerDistributionPanel pdp = new PowerDistributionPanel();
-  public static GenerateTrajectoriesCommand generateTrajectoriesCommand;
-  public static TrajectoryFollowerCommand trajectoryFollowerCommand;
+ 
 
   @Override
   public void robotInit() {
@@ -36,10 +33,7 @@ public class Robot extends TimedRobot {
     driveTrainSubsystem = new DriveTrainSubsystem();
     lawnmowerBladeSubsystem = new LawnmowerBladeSubsystem();
     lightRelaySubsystem = new LightRelaySubsystem();
-    generateTrajectoriesCommand = new GenerateTrajectoriesCommand();
-    generateTrajectoriesCommand.start();
-    trajectoryFollowerCommand = new TrajectoryFollowerCommand(driveTrainSubsystem);
-    generateTrajectoriesCommand.cancel();
+    // dataLogger = new DataLogger(pdp);
     // CameraServer.getInstance().startAutomaticCapture();
   }
 
@@ -52,7 +46,6 @@ public class Robot extends TimedRobot {
     SmartDashboard.putNumber("Blade Current Draw: ", pdp.getCurrent(RobotMap.motor5PDPChannel));
     SmartDashboard.putBoolean("Relay On: ", getRelayState());
     SmartDashboard.putNumber("Light Current Draw: ", pdp.getCurrent(RobotMap.relay1PDPChannel));
-    dataLogger = new DataLogger();
   }
 
   @Override
@@ -72,14 +65,10 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousPeriodic() {
     Scheduler.getInstance().run();
-    trajectoryFollowerCommand.start();
   }
 
   @Override
   public void teleopInit() {
-    if (trajectoryFollowerCommand.isRunning()) {
-      trajectoryFollowerCommand.cancel();
-    }
     driveWithJoysticks = new DriveWithJoysticks();
     OI.lawnmowerButton.toggleWhenPressed(new LawnmowerBladeOn(lawnmowerBladeSubsystem, ledOutputSubsystem));
     OI.lightRelayButton.toggleWhenPressed(new LightRelayOn(lightRelaySubsystem));

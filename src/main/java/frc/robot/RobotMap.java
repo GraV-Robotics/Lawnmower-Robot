@@ -21,9 +21,9 @@ public class RobotMap {
   public static int motor2PDPChannel = 1;
   public static int motor3PDPChannel = 2;
   public static int motor4PDPChannel = 3;
-  public static int motor5PDPChannel = 4;
-  public static int relay1PDPChannel = 5;
-  public static int LEDPDPChannel = 6;
+  public static int motor5PDPChannel = 15;
+  public static int relay1PDPChannel = 4;
+  public static int LEDPDPChannel = 11;
   public static int driveTrainEncoderPulses = 1440;
   public static double driveTrainGearReduction = 15 / 22;
   public static int driveTrainWheelSize = 3;

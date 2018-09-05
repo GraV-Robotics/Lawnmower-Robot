@@ -24,8 +24,8 @@ public class DriveTrainSubsystem extends Subsystem {
     motor2 = new Spark(RobotMap.motor2);
     motor3 = new Spark(RobotMap.motor3);
     motor4 = new Spark(RobotMap.motor4);
-    leftEncoder = new Encoder(RobotMap.leftEncoder[0], RobotMap.leftEncoder[1], true, EncodingType.k4X);
-    rightEncoder = new Encoder(RobotMap.rightEncoder[0], RobotMap.rightEncoder[1], true, EncodingType.k4X);
+    // leftEncoder = new Encoder(RobotMap.leftEncoder[0], RobotMap.leftEncoder[1], true, EncodingType.k4X);
+    // rightEncoder = new Encoder(RobotMap.rightEncoder[0], RobotMap.rightEncoder[1], true, EncodingType.k4X);
     gyro = new ADXRS450_Gyro();
     gyro.calibrate();
   }
